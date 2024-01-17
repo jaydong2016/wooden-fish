@@ -129,7 +129,7 @@ const App: Component = () => {
           alt='WoodenFish'
           onMouseDown={isPC ? handle : () => {}}
           onMouseUp={isPC ? release : () => {}}
-          // disable click event
+          // disable click event of mobile device
           //onTouchStart={handle}
           //onTouchEnd={release}
           transition-300
@@ -152,9 +152,11 @@ const App: Component = () => {
             积攒功德
           </div>
           </Show>
+          <Show when={!isPC}>
           <div mb='1.5'>
-            把你的移动设备想象成木鱼棒,敲起来吧!
+            把你的移动设备想象成木鱼棒,用力敲起来吧!
           </div>
+          </Show>
           <div>
             点击
             <code class={styles.code}>
