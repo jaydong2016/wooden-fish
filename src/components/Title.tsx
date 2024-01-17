@@ -1,4 +1,4 @@
-export function AresChang() {
+export function Title() {
   return (
     <a href='https://wfish.netlify.app' target='_blank'>
       <span

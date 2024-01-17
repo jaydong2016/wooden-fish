@@ -39,6 +39,19 @@ function handleKeyBoard({ key, code, type }: KeyboardEvent) {
   type === 'keydown' ? handle() : release()
 }
 
+var lastBeta = 0;
+
+window.addEventListener('deviceorientation', function(event) {
+  var alpha = event.alpha;
+  var beta = event.beta;
+  var gamma = event.gamma;
+
+  if (beta - lastBeta > 30) {
+    handle()
+    release()
+  }
+});
+
 const App: Component = () => {
   // 监听控制声音变化
   createEffect(() => bgm.volume(store.volume / 100))
@@ -65,7 +78,7 @@ const App: Component = () => {
       }}>
       <header>
         <div flex justify-between items-center>
-          <AresChang />
+          <Title />
           <div text-2xl flex items-center gap-2>
             <i
               i-carbon-music
@@ -142,6 +155,9 @@ const App: Component = () => {
             开启/关闭 沉浸模式
           </div>
         </div>
+        <div>
+            beta: {lastBeta}
+            </div>
       </footer>
       <Show when={show()}>
         <Settings onClose={() => setShow(false)} />
