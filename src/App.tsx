@@ -144,11 +144,16 @@ const App: Component = () => {
 
       <footer color='#444'>
         <div font-bold text-sm>
+          <Show when={isPC}>
           <div mb='1.5'>
             按下
             <code class={styles.code}>Space</code>或
             <code class={styles.code}>Click</code>
             积攒功德
+          </div>
+          </Show>
+          <div mb='1.5'>
+            把你的移动设备想象成木鱼棒,敲起来吧!
           </div>
           <div>
             点击
@@ -164,9 +169,6 @@ const App: Component = () => {
             开启/关闭 沉浸模式
           </div>
         </div>
-        <div>
-            beta: {lastBeta}
-            </div>
       </footer>
       <Show when={show()}>
         <Settings onClose={() => setShow(false)} />
