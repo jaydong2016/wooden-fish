@@ -46,7 +46,7 @@ window.addEventListener('deviceorientation', function(event) {
   var beta = event.beta;
   var gamma = event.gamma;
 
-  if (beta - lastBeta > 30) {
+  if (beta - lastBeta > 10) {
     handle()
     release()
   }
