@@ -39,7 +39,7 @@ function handleKeyBoard({ key, code, type }: KeyboardEvent) {
   type === 'keydown' ? handle() : release()
 }
 
-function debounce(func, timeout = 300){
+function debounce(func, timeout = 350){
   let timer;
   return (...args) => {
     clearTimeout(timer);
@@ -54,7 +54,7 @@ var lastBeta = 0;
 window.addEventListener('deviceorientation', function(event) {
   var beta = event.beta;
 
-  if (beta - lastBeta > 15) {
+  if (beta - lastBeta > 12) {
     motionAction()
   }
   lastBeta = beta;
