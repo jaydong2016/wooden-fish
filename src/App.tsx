@@ -54,7 +54,7 @@ var lastBeta = 0;
 window.addEventListener('deviceorientation', function(event) {
   var beta = event.beta;
 
-  if (beta - lastBeta > 12) {
+  if (lastBeta - beta > 5) {
     motionAction()
   }
   lastBeta = beta;
