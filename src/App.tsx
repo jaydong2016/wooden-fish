@@ -158,7 +158,7 @@ const App: Component = () => {
           </div>
           </Show>
           <div mb='1.5'>
-            推荐到<a href='https://1link.fun'>我的科技周刊</a>探索更多好玩的内容
+            推荐到<a color="#66ccff" href='https://1link.fun'><bold>我的科技周刊</bold></a>探索更多好玩的内容
           </div>
           <div>
             点击
