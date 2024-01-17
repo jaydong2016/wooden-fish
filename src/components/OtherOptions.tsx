@@ -6,12 +6,10 @@ export function OtherOptions() {
 
   function setCacheSetting(checked: boolean) {
     setStore('isCount', checked)
-    // alert(`缓存功能已${tips()}`)
   }
 
   function clearCache() {
     setStore('count', 0)
-    alert('叮 ~ 功德已清空！')
   }
 
   return (
