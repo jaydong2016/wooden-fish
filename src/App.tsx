@@ -50,6 +50,7 @@ window.addEventListener('deviceorientation', function(event) {
     handle()
     release()
   }
+  lastBeta = beta;
 });
 
 const App: Component = () => {
