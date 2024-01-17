@@ -42,11 +42,9 @@ function handleKeyBoard({ key, code, type }: KeyboardEvent) {
 var lastBeta = 0;
 
 window.addEventListener('deviceorientation', function(event) {
-  var alpha = event.alpha;
   var beta = event.beta;
-  var gamma = event.gamma;
 
-  if (beta - lastBeta > 10) {
+  if (beta - lastBeta > 20) {
     handle()
     release()
   }
@@ -122,8 +120,9 @@ const App: Component = () => {
           alt='WoodenFish'
           onMouseDown={isPC ? handle : () => {}}
           onMouseUp={isPC ? release : () => {}}
-          onTouchStart={handle}
-          onTouchEnd={release}
+          // disable click event
+          //onTouchStart={handle}
+          //onTouchEnd={release}
           transition-300
           cursor-pointer
           draggable={false}
