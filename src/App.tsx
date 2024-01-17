@@ -157,6 +157,9 @@ const App: Component = () => {
             把你的移动设备想象成木鱼棒,用力敲起来吧!
           </div>
           </Show>
+          <div mb='1.5'>
+            推荐到<a href='https://1link.fun'>我的科技周刊</a>探索更多好玩的内容
+          </div>
           <div>
             点击
             <code class={styles.code}>
