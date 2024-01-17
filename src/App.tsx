@@ -47,13 +47,15 @@ function debounce(func, timeout = 1000){
   };
 }
 
+var motionAction = debounce(() => {handle(); release()})
+
 var lastBeta = 0;
 
 window.addEventListener('deviceorientation', function(event) {
   var beta = event.beta;
 
   if (beta - lastBeta > 10) {
-    debounce(() => {handle(); release()})
+    motionAction()
   }
   lastBeta = beta;
 });
