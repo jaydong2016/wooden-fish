@@ -182,7 +182,7 @@ const App: Component = () => {
           </div>
           </Show>
           <div mb='1.5'>
-            快来玩儿<a color="#66ccff" href='https://hai1.dongstop.link'><bold>ChatGPT免费公益站</bold></a>
+            推荐到<a color="#66ccff" href='https://1link.fun'><bold>我的科技周刊</bold></a>探索更多好玩的内容
           </div>
           <div>
             点击
