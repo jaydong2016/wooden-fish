@@ -9,7 +9,7 @@ export function Title() {
           background: 'linear-gradient( 315deg, #42d392 25%, #647eff )'
         }}
         bg-clip-text="!">
-        Wooden Fish
+        muyu.weiya
       </span>
     </a>
   )
