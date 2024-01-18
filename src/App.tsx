@@ -26,9 +26,25 @@ function release() {
   setZoom(false)
 }
 
+function toggleFullscreen() {
+  let elem = document.querySelector("#root");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      console.error(
+        `Error attempting to enable fullscreen mode: ${err.message} (${err.name})`,
+      );
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}
+
+
 function handleBGM() {
   if (!bgm.playing()) bgm.play()
   else bgm.pause()
+  toggleFullscreen()
 }
 
 function debounce(func, timeout = 350){
