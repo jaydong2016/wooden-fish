@@ -31,14 +31,6 @@ function handleBGM() {
   else bgm.pause()
 }
 
-// 绑定全局 keyboard 事件
-document.onkeydown = handleKeyBoard
-document.onkeyup = handleKeyBoard
-function handleKeyBoard({ key, code, type }: KeyboardEvent) {
-  if (key !== ' ' || code !== 'Space') return
-  type === 'keydown' ? handle() : release()
-}
-
 function debounce(func, timeout = 350){
   let timer;
   return (...args) => {
@@ -48,6 +40,18 @@ function debounce(func, timeout = 350){
 }
 
 var motionAction = debounce(() => {handle(); release()})
+
+var keyDownAction = debounce(() => {handle()})
+
+
+// 绑定全局 keyboard 事件
+document.onkeydown = handleKeyBoard
+document.onkeyup = handleKeyBoard
+function handleKeyBoard({ key, code, type }: KeyboardEvent) {
+  if (key !== ' ' || code !== 'Space') return
+  type === 'keydown' ? keyDownAction() : release()
+}
+
 
 var lastBeta = 0;
 
@@ -127,7 +131,7 @@ const App: Component = () => {
         <img
           src={WoodenFish}
           alt='WoodenFish'
-          onMouseDown={isPC ? handle : () => {}}
+          onMouseDown={isPC ? keyDownAction : () => {}}
           onMouseUp={isPC ? release : () => {}}
           // disable click event of mobile device
           //onTouchStart={handle}
