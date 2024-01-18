@@ -44,7 +44,6 @@ function toggleFullscreen() {
 function handleBGM() {
   if (!bgm.playing()) bgm.play()
   else bgm.pause()
-  toggleFullscreen()
 }
 
 function debounce(func, timeout = 350){
@@ -108,6 +107,11 @@ const App: Component = () => {
         <div flex justify-between items-center>
           <Title />
           <div text-2xl flex items-center gap-2>
+          <i
+              i-carbon-fit-to-screen
+              inline-block
+              cursor-pointer
+              onClick={toggleFullscreen}></i>
             <i
               i-carbon-music
               inline-block
